@@ -9,13 +9,13 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div>
             <p className="text-gray-700 dark:text-gray-300 font-medium">
-              © {currentYear} WawiDev. All rights reserved.
+              © {currentYear} Devjoshuafronda. All rights reserved.
             </p>
           </div>
           
           <div className="flex space-x-4">
             <a 
-              href="https://github.com" 
+              href="https://github.com/joshuafronda" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
@@ -24,22 +24,13 @@ const Footer = () => {
               <FaGithub className="h-6 w-6" />
             </a>
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/joshuafronda/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
               aria-label="LinkedIn"
             >
               <FaLinkedin className="h-6 w-6" />
-            </a>
-            <a 
-              href="https://twitter.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
-              aria-label="Twitter"
-            >
-              <FaTwitter className="h-6 w-6" />
             </a>
           </div>
         </div>
