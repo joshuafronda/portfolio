@@ -4,13 +4,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-gray-100 dark:bg-gray-800 py-8">
+    <footer className="bg-gray-100 dark:bg-gray-800 py-3">
       <div className="container-custom">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div>
-            <p className="text-gray-700 dark:text-gray-300 font-medium">
-              © {currentYear} Devjoshuafronda. All rights reserved.
-            </p>
           </div>
           
           <div className="flex space-x-4">

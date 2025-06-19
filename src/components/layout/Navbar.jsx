@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import { motion } from 'framer-motion';
-import { FaCode, FaMoon, FaSun } from 'react-icons/fa';
+import { FaMoon, FaSun } from 'react-icons/fa';
 import ThemeContext from '../../context/ThemeContext';
 
 const Navbar = () => {
@@ -30,8 +30,6 @@ const Navbar = () => {
   }`;
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Projects', href: '#projects' }
   ];
 
   return (
@@ -46,7 +44,7 @@ const Navbar = () => {
           transition={{ duration: 0.5 }}
         >
           {/* <FaCode className="h-7 w-7" /> */}
-          <span className="text-xl font-bold">Devjoshuafronda</span>
+          <span className="text-xl font-bold">JF</span>
         </motion.a>
 
         {/* Desktop Navigation */}
@@ -90,29 +88,6 @@ const Navbar = () => {
           </button>
         </div>
       </div>
-
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <motion.div 
-          className="md:hidden bg-white dark:bg-gray-800 shadow-lg"
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: 'auto' }}
-          transition={{ duration: 0.3 }}
-        >
-          <div className="container-custom py-4">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="block py-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
-        </motion.div>
-      )}
     </nav>
   );
 };

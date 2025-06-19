@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import Navbar from './components/layout/Navbar';
+// import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
 // import Projects from './components/sections/Projects';
 // import Skills from './components/sections/Skills';
 // import Contact from './components/sections/Contact';
-import Footer from './components/layout/Footer';
+// import Footer from './components/layout/Footer';
 import ThemeContext from './context/ThemeContext';
 
 function App() {
@@ -36,14 +36,13 @@ function App() {
   return (
     <ThemeContext.Provider value={{ darkMode, toggleDarkMode }}>
       <div className="min-h-screen flex flex-col">
-        <Navbar />
         <main>
           <Hero />
           {/* <Projects /> */}
           {/* <Skills /> */}
           {/* <Contact /> */}
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </ThemeContext.Provider>
   );
