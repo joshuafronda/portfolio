@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
-import Projects from './components/sections/Projects';
+// import Projects from './components/sections/Projects';
 // import Skills from './components/sections/Skills';
 // import Contact from './components/sections/Contact';
 import Footer from './components/layout/Footer';
@@ -9,7 +9,7 @@ import ThemeContext from './context/ThemeContext';
 
 function App() {
   // Theme state management
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
     // Check for user preference
@@ -39,7 +39,7 @@ function App() {
         <Navbar />
         <main>
           <Hero />
-          <Projects />
+          {/* <Projects /> */}
           {/* <Skills /> */}
           {/* <Contact /> */}
         </main>

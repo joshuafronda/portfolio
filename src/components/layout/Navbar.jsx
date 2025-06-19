@@ -64,17 +64,6 @@ const Navbar = () => {
               </motion.a>
             ))}
           </div>
-
-          {/* Theme Toggle */}
-          <motion.button
-            onClick={toggleDarkMode}
-            className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 focus:outline-none"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            title={darkMode ? "Switch to light mode" : "Switch to dark mode"}
-          >
-            {darkMode ? <FaSun className="h-5 w-5" /> : <FaMoon className="h-5 w-5" />}
-          </motion.button>
         </div>
 
         {/* Mobile Menu Button */}
