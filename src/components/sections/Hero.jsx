@@ -1,8 +1,24 @@
 import { motion } from 'framer-motion';
-import { FaEye, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaEye, FaLinkedin, FaGithub, FaCode, FaLink } from 'react-icons/fa';
 import Button from '../ui/Button';
+import ScrollVelocity from '../ui/ScrollVelocity';
+import { useState } from 'react';
+
 
 const Hero = () => {
+  const [velocity] = useState(100);
+  
+  // Define key projects as a const to make it easier to manage
+  const keyProjects = [
+    {
+      name: "EASYtizen: An Integrated Web and Mobile Application for Document Requests and Data Analytics",
+      technologies: ["ReactJS","React Native", "Tailwind CSS", "Firebase", "JavaScript"],
+      description: "A responsive and animated personal portfolio showcasing my skills and projects.",
+      githubLink: "https://github.com/joshuafronda/portfolio",
+      liveLink: "https://easytizen.vercel.app/"
+    }
+  ];
+
   return (
     <section id="home" className="min-h-screen flex items-center pt-10 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
       <div className="container-custom grid md:grid-cols-2 gap-7 mb-10 items-center">
@@ -88,6 +104,47 @@ const Hero = () => {
             </div>
             </motion.div>
           </motion.div>
+
+          {/* Projects Preview */}
+          <div className="mt-8">
+            <h3 className="text-lg font-semibold text-blue-600 dark:text-blue-400 mb-4">Featured Projects</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {keyProjects.map((project, index) => (
+                <motion.div 
+                  key={index}
+                  className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 shadow-sm hover:shadow-md transition-all"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.2 + (index * 0.2), duration: 0.5 }}
+                >
+                  <h4 className="font-semibold text-gray-800 dark:text-white mb-2">{project.name}</h4>
+                  <p className="text-xs text-gray-600 dark:text-gray-300 mb-2">{project.description}</p>
+                  <div className="flex flex-wrap gap-1 mb-3">
+                    {project.technologies.map((tech, techIndex) => (
+                      <span 
+                        key={techIndex} 
+                        className="bg-blue-100 dark:bg-blue-800/40 text-blue-700 dark:text-blue-300 px-2 py-1 rounded text-xs"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex gap-3">
+                    {project.githubLink !== "#" && (
+                      <a 
+                        href="https://drs-mncpltysp-easytizen.org/developer" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
+                      >
+                        <FaLink className="w-5 h-5" />
+                      </a>
+                    )}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </motion.div>
 
         {/* Right Side (Experience & Technologies) */}
