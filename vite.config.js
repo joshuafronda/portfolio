@@ -8,5 +8,5 @@ export default defineConfig({
     include: /\.[jt]sx?$/,
     exclude: [],
   },
-  assetsInclude: ['**/*.glb']
+  assetsInclude: ['**/*.glb', '**/*.png']
 })

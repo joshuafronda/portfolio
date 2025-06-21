@@ -7,15 +7,18 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate:card": "node --experimental-modules scripts/generate-placeholder-card.js"
   },
   "dependencies": {
     "@react-spring/web": "^9.7.5",
     "@react-three/drei": "^9.122.0",
     "@react-three/fiber": "^8.18.0",
     "@react-three/rapier": "^1.5.0",
+    "file-saver": "^2.0.5",
     "framer-motion": "^10.18.0",
     "gsap": "^3.13.0",
+    "matter-js": "^0.20.0",
     "meshline": "^3.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

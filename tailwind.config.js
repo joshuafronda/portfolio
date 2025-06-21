@@ -66,10 +66,17 @@ export default {
       },
       animation: {
         'bounce-slow': 'bounce 3s infinite',
+        shine: 'shine 5s linear infinite',
       },
       transitionDuration: {
         '2000': '2000ms',
-      }
+      },
+      keyframes: {
+        shine: {
+          '0%': { 'background-position': '100%' },
+          '100%': { 'background-position': '-100%' },
+        },
+      },
     },
   },
   plugins: [],
