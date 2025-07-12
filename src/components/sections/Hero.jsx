@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaEye, FaLinkedin, FaGithub, FaCode, FaLink, FaChevronDown, FaChevronUp, FaTimes } from 'react-icons/fa';
+import { FaEye, FaLinkedin, FaGithub, FaCode, FaLink, FaChevronDown, FaChevronUp, FaTimes, FaHackerrank } from 'react-icons/fa';
 import DecryptedText from '../ui/DecryptedText'
 import ShinyText from '../ui/ShinyText'
 import ProfileCard from '../ui/ProfileCard'
@@ -137,6 +137,17 @@ const Hero = () => {
                 <FaEye className="w-6 h-6" />
                 <span className="absolute z-10 bg-gray-800 text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -top-8 left-1/2 transform -translate-x-1/2">
                   Preview
+                </span>
+              </a>
+              <a 
+                href="https://www.hackerrank.com/joshuafronda" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors relative group"
+              >
+                <FaHackerrank className="w-6 h-6" />
+                <span className="absolute z-10 bg-gray-800 text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -top-8 left-1/2 transform -translate-x-1/2">
+                  HackerRank
                 </span>
               </a>
               <div className="gap-4 ml-4">
