@@ -83,7 +83,7 @@ const Hero = () => {
           {/* Classic About Me Section */}
           <div className="mb-6 px-2 py-2 border border-gray-300 rounded bg-white dark:bg-gray-900 dark:border-gray-700 shadow-sm">
             <DecryptedText 
-              text="A dedicated and results-driven aspiring programmer/developer with a strong foundation in web and mobile development, server-side programming, API integration, and database management."
+              text="A dedicated and results-driven aspiring programmer/developer with a foundation in web and mobile development, server-side programming, API integration, and database management."
               variant="neon"
               className="text-sm text-gray-800 dark:text-gray-200"
               parentClassName="block"
