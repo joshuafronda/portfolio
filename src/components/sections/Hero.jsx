@@ -33,7 +33,8 @@ const Hero = () => {
       "Collaborated in Agile teams and used Git for version control",
       "Documented codebases, system architecture, and project requirements for maintainability.",
       "Used Git for version control and collaboration across development teams.",
-      "Applied strong communication, teamwork, and problem-solving skills to deliver quality results on time."
+      "Applied strong communication, teamwork, and problem-solving skills to deliver quality results on time.",
+      "Created a machine learning tool using Python and Ollama for local LLM inference and automation"
     ]
   };
 
