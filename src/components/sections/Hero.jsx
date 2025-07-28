@@ -153,7 +153,7 @@ const Hero = () => {
               </a>
               <div className="gap-4 ml-4">
               <a
-                href="https://drive.google.com/file/d/1HFSbfqmgXebdix5-IGPpv5KAERFb0w8S/view?usp=sharing"
+                href="https://drive.google.com/file/d/1YERAQl4iRv5ihoYExJ2sS7Rj-DnBoT_7/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 text-sm font-medium transition-colors relative group"
