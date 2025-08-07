@@ -4,6 +4,7 @@ import { FaEye, FaLinkedin, FaGithub, FaCode, FaLink, FaChevronDown, FaChevronUp
 import DecryptedText from '../ui/DecryptedText'
 import ShinyText from '../ui/ShinyText'
 import ProfileCard from '../ui/ProfileCard'
+import TechStack from '../ui/TechStack'
 import avatarImage from '../../assets/Me.png'
 
 const Hero = () => {
@@ -26,15 +27,15 @@ const Hero = () => {
     position: "Full Stack Developer Intern",
     period: "FEB — APR 2025",
     highlights: [
-      "Developed web and mobile applications using React.js, Flutter, and WordPress",
-      "Built and maintained backend services with PHP and Django REST Framework",
-      "Managed WordPress backend using PHP and MariaDB",
+      "Developed web and mobile applications",
+      "Built and maintained backend services",
+      "Managed WordPress",
       "Deployed applications on Ubuntu servers and configured Nginx",
-      "Collaborated in Agile teams and used Git for version control",
-      "Documented codebases, system architecture, and project requirements for maintainability.",
-      "Used Git for version control and collaboration across development teams.",
-      "Applied strong communication, teamwork, and problem-solving skills to deliver quality results on time.",
-      "Created a machine learning tool using Python and Ollama for local LLM inference and automation"
+      "Collaborated in Agile teams, contributing to sprint planning, daily stand-ups, and retrospectives",
+      "Tracked tasks and project progress using Trello",
+      "Documented codebases, system architecture, and project requirements",
+      "Used Git for version control and collaboration",
+      "Applied communication, teamwork, and problem-solving",
     ]
   };
 
@@ -153,7 +154,7 @@ const Hero = () => {
               </a>
               <div className="gap-4 ml-4">
               <a
-                href="https://drive.google.com/file/d/1mHRHT1iFoa_-vsFk0m5kAtLSou0OAcR5/view?usp=sharing"
+                href="https://drive.google.com/file/d/1kYlQkC7avxLrdnoxLs6zQYmK8ifIH5I5/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 text-sm font-medium transition-colors relative group"
@@ -216,6 +217,17 @@ const Hero = () => {
             </AnimatePresence>
           </div>
 
+          {/* Technologies Curved Loop for Mobile
+          <div className="mt-8 block md:hidden text-xs sm:text-sm md:text-base lg:text-lg">
+            <CurvedLoop 
+              marqueeText="React ✦ React Native ✦ JavaScript ✦ TypeScript ✦ Tailwind CSS ✦ Firebase ✦ PHP ✦ Django ✦ Python ✦ Git ✦ Nginx ✦ Ubuntu ✦ WordPress ✦ Machine Learning ✦ Data Analysis ✦ Problem Solving ✦" 
+              speed={2}
+              curveAmount={10}
+              interactive={true}
+              className="text-blue-600 dark:text-blue-400 font-bold text-sm"
+            />
+          </div> */}
+
           {/* Projects Preview */}
           <div className="mt-8">
             <h3 className="text-lg font-semibold text-blue-600 dark:text-blue-400 mb-4">Featured Projects</h3>
@@ -274,22 +286,34 @@ const Hero = () => {
             </div>
             <span className="font-semibold">{experienceDetails.position}</span>
             <ul className="flex flex-col list-disc list-inside text-gray-700 dark:text-gray-200 text-sm space-y-1 mt-4">
-              <li>Developed web and mobile applications using React.js, Flutter, and WordPress.</li>
-              <li>Built and maintained backend services with PHP and Django REST Framework.</li>
-              <li>Managed WordPress backend using PHP and MariaDB for dynamic content and performance.</li>
-              <li>Deployed applications on Ubuntu servers and configured Nginx for routing and optimization.</li>
-              <li>Collaborated in Agile teams, contributing to sprint planning, daily stand-ups, and retrospectives.</li>
-              <li>Tracked tasks and project progress using Trello to ensure timely delivery.</li>
-              <li>Documented codebases, system architecture, and project requirements for maintainability.</li>
-              <li>Used Git for version control and collaboration across development teams.</li>
-              <li>Applied strong communication, teamwork, and problem-solving skills to deliver quality results on time.</li>
+            <li>Developed web and mobile applications</li>
+            <li>Built and maintained backend services</li>
+            <li>Managed WordPress</li>
+            <li>Deployed applications on Ubuntu servers and configured Nginx</li>
+            <li>Collaborated in Agile teams, contributing to sprint planning, daily stand-ups, and retrospectives</li>
+            <li>Tracked tasks and project progress using Trello</li>
+            <li>Documented codebases, system architecture, and project requirements</li>
+            <li>Used Git for version control and collaboration</li>
+            <li>Applied communication, teamwork, and problem-solving</li>
             </ul>
             <p className="text-sm text-gray-300 mt-2">
               During my internship, these are the <a href="https://caist.batstateu.edu.ph/behind-the-code/select/joshua-b.-fronda" target="_blank" rel="noopener noreferrer" className="font-semibold text-white underline hover:text-blue-400 transition-colors">Website.</a>
             </p>
           </div>
+
+          {/* Technology Icons */}
+          <motion.div
+            className=""
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.7, duration: 0.7 }}
+          >
+            <TechStack />
+          </motion.div>
         </motion.div>
       </div>
+
+      
 
       {/* Full Screen Modal for Profile Card */}
       {isProfileCardVisible && (

@@ -7,6 +7,25 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      keyframes: {
+        'scroll-tech': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        'fade-tech': {
+          '0%, 100%': { opacity: 1 },
+          '50%': { opacity: 0.7 }
+        },
+        'fade-in-tech': {
+          '0%': { opacity: 0, transform: 'translateX(-10px) scale(0.9)' },
+          '100%': { opacity: 1, transform: 'translateX(0) scale(1)' }
+        }
+      },
+      animation: {
+        'scroll-tech': 'scroll-tech 60s linear infinite',
+        'fade-tech': 'fade-tech 8s ease-in-out infinite',
+        'fade-in-tech': 'fade-in-tech 0.8s ease-out'
+      },
       colors: {
         primary: {
           50: '#eff6ff',
@@ -64,20 +83,11 @@ export default {
         '128': '32rem',
         '144': '36rem',
       },
-      animation: {
-        'bounce-slow': 'bounce 3s infinite',
-        shine: 'shine 5s linear infinite',
-      },
       transitionDuration: {
         '2000': '2000ms',
-      },
-      keyframes: {
-        shine: {
-          '0%': { 'background-position': '100%' },
-          '100%': { 'background-position': '-100%' },
-        },
       },
     },
   },
   plugins: [],
 }
+
