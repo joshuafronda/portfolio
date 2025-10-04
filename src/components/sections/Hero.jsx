@@ -39,6 +39,19 @@ const Hero = () => {
     ]
   };
 
+  const experienceDetails2 = {
+    company: "Batangas State University TNEU - Alangilan Campus",
+    position: "IT Instructor",
+    period: "PRESENT",
+    highlights: [
+      "Teaching Advanced Computer Programming",
+      "Instructing Networking courses",
+      "Teaching Mobile Computing and Mobile Development",
+      "Conducting Web Designing classes",
+      "Pursuing Master's in Information Technology (Graduate School 2025)",
+    ]
+  };
+
   const toggleProfileCard = useCallback((e) => {
     // Prevent default and stop propagation to avoid immediate closing
     if (e) {
@@ -165,6 +178,21 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
+         {/* Mobile Friendly Experience Section */}
+         <div className="mt-8 block md:hidden">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+              <span className="text-xs font-semibold text-gray-400 dark:text-gray-500 tracking-widest mb-2 sm:mb-0">
+                {experienceDetails2.period} - {experienceDetails2.company}
+              </span>
+            </div>
+            <span className="font-semibold">{experienceDetails2.position}</span>
+            <ul className="flex flex-col list-disc list-inside text-gray-700 dark:text-gray-200 text-sm space-y-1 mt-4">
+              {experienceDetails2.highlights.map((highlight, index) => (
+                <li key={index}>{highlight}</li>
+              ))}
+            </ul>
+          </div>
+
           {/* Mobile-Friendly Experience Section */}
           <div className="mt-8 block md:hidden">
             <div 
@@ -277,6 +305,19 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="hidden md:flex flex-col justify-center w-full px-4 md:sticky md:top-20"
         >
+          <div className="mt-8 mb-8">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+              <span className="text-xs font-semibold text-gray-400 dark:text-gray-500 tracking-widest mb-2 sm:mb-0">
+                {experienceDetails2.period} - {experienceDetails2.company}
+              </span>
+            </div>
+            <span className="font-semibold">{experienceDetails2.position}</span>
+            <ul className="flex flex-col list-disc list-inside text-gray-700 dark:text-gray-200 text-sm space-y-1 mt-4">
+              {experienceDetails2.highlights.map((highlight, index) => (
+                <li key={index}>{highlight}</li>
+              ))}
+            </ul>
+          </div>
           {/* Experience Section */}
           <div className="mt-8 mb-8">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
