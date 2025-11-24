@@ -41,7 +41,7 @@ const Hero = () => {
 
   const experienceDetails2 = {
     company: "Batangas State University TNEU - Alangilan Campus",
-    position: "IT Instructor",
+    position: "IT/CS Instructor",
     period: "PRESENT",
     highlights: [
       "Teaching Advanced Computer Programming",
@@ -283,7 +283,7 @@ const Hero = () => {
                   <div className="flex gap-3">
                     {project.githubLink !== "#" && (
                       <a 
-                        href="https://drs-mncpltysp-easytizen.org/developer" 
+                        href="https://fir-config-6ca5c.web.app/developer" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
