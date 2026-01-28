@@ -1,56 +1,17 @@
 import React, { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaEye, FaLinkedin, FaGithub, FaCode, FaLink, FaChevronDown, FaChevronUp, FaTimes, FaHackerrank } from 'react-icons/fa';
-import DecryptedText from '../ui/DecryptedText'
-import ShinyText from '../ui/ShinyText'
-import ProfileCard from '../ui/ProfileCard'
-import TechStack from '../ui/TechStack'
-import avatarImage from '../../assets/Me.png'
+import { FaEye, FaLinkedin, FaGithub, FaLink, FaChevronDown, FaChevronUp, FaHackerrank } from 'react-icons/fa';
+import DecryptedText from '../ui/DecryptedText';
+import ShinyText from '../ui/ShinyText';
+import ProfileCard from '../ui/ProfileCard';
+import TechStack from '../ui/TechStack';
+import avatarImage from '../../assets/Me.png';
+import { FEATURED_PROJECTS } from '../../config/featuredProjects';
+import { EXPERIENCE } from '../../config/experience';
 
 const Hero = () => {
   const [isExperienceExpanded, setIsExperienceExpanded] = useState(false);
   const [isProfileCardVisible, setIsProfileCardVisible] = useState(false);
-  
-  // Define key projects as a const to make it easier to manage
-  const keyProjects = [
-    {
-      name: "EASYtizen: An Integrated Web and Mobile Application for Document Requests and Data Analytics",
-      technologies: ["ReactJS","React Native", "Tailwind CSS", "Firebase", "JavaScript"],
-      description: "Experience the future of barangay management with our innovative digital platform",
-      githubLink: "https://github.com/joshuafronda/portfolio",
-      liveLink: "https://easytizen.vercel.app/"
-    }
-  ];
-
-  const experienceDetails = {
-    company: "Batangas State University TNEU - Main Campus",
-    position: "Full Stack Developer Intern",
-    period: "FEB — APR 2025",
-    highlights: [
-      "Developed web and mobile applications",
-      "Built and maintained backend services",
-      "Managed WordPress",
-      "Deployed applications on Ubuntu servers and configured Nginx",
-      "Collaborated in Agile teams, contributing to sprint planning, daily stand-ups, and retrospectives",
-      "Tracked tasks and project progress using Trello",
-      "Documented codebases, system architecture, and project requirements",
-      "Used Git for version control and collaboration",
-      "Applied communication, teamwork, and problem-solving",
-    ]
-  };
-
-  const experienceDetails2 = {
-    company: "Batangas State University TNEU - Alangilan Campus",
-    position: "IT/CS Instructor",
-    period: "PRESENT",
-    highlights: [
-      "Teaching Advanced Computer Programming",
-      "Instructing Networking courses",
-      "Teaching Mobile Computing and Mobile Development",
-      "Conducting Web Designing classes",
-      "Pursuing Master's in Information Technology (Graduate School 2025)",
-    ]
-  };
 
   const toggleProfileCard = useCallback((e) => {
     // Prevent default and stop propagation to avoid immediate closing
@@ -74,13 +35,13 @@ const Hero = () => {
           className=""
         >
           <motion.span 
-            className="inline-block px-3 py-1 mb-6 text-sm font-medium text-black dark:text-blue-400 bg-blue-100 dark:bg-blue-900/30 rounded-full"
+            className="inline-block px-3 py-1 mb-6 mt-8 text-sm font-medium text-black dark:text-blue-400 bg-blue-100 dark:bg-blue-900/30 rounded-full"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
             <ShinyText 
-              text="Programmer & Data/Business Analyst" 
+              text="BSIT Major in Business Analytics" 
               speed={3} 
               className="text-current"
             />
@@ -117,7 +78,7 @@ const Hero = () => {
             
             {/* Social Links */}
             <motion.div 
-              className="flex gap-4 ml-4"
+              className="flex flex-wrap gap-4 ml-4 items-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.1, duration: 0.8 }}
@@ -126,6 +87,7 @@ const Hero = () => {
                 href="https://www.linkedin.com/in/joshuafronda/" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                aria-label="LinkedIn profile"
                 className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors relative group"
               >
                 <FaLinkedin className="w-6 h-6" />
@@ -137,6 +99,7 @@ const Hero = () => {
                 href="https://github.com/joshuafronda" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                aria-label="GitHub profile"
                 className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors relative group"
               >
                 <FaGithub className="w-6 h-6" />
@@ -144,20 +107,22 @@ const Hero = () => {
                   GitHub
                 </span>
               </a>
-              <a 
-                href="#" 
+              <button 
+                type="button"
                 onClick={toggleProfileCard}
-                className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors relative group"
+                aria-label="Preview profile card"
+                className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors relative group bg-transparent border-0 p-0 cursor-pointer"
               >
                 <FaEye className="w-6 h-6" />
                 <span className="absolute z-10 bg-gray-800 text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -top-8 left-1/2 transform -translate-x-1/2">
                   Preview
                 </span>
-              </a>
+              </button>
               <a 
                 href="https://www.hackerrank.com/joshuafronda" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                aria-label="HackerRank profile"
                 className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors relative group"
               >
                 <FaHackerrank className="w-6 h-6" />
@@ -165,35 +130,34 @@ const Hero = () => {
                   HackerRank
                 </span>
               </a>
-              <div className="gap-4 ml-4">
               <a
                 href="https://drive.google.com/file/d/10e8k8f3odiI27D6KGO0DgIldnFwZlJNt/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 text-sm font-medium transition-colors relative group"
+                aria-label="View resume"
+                className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 text-sm font-medium transition-colors"
               >
                 View Resume
               </a>
-            </div>
             </motion.div>
           </motion.div>
 
-         {/* Mobile Friendly Experience Section */}
-         <div className="mt-8 block md:hidden">
+          {/* Mobile: current role */}
+          <div className="mt-8 block md:hidden">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
               <span className="text-xs font-semibold text-gray-400 dark:text-gray-500 tracking-widest mb-2 sm:mb-0">
-                {experienceDetails2.period} - {experienceDetails2.company}
+                {EXPERIENCE.current.period} — {EXPERIENCE.current.company}
               </span>
             </div>
-            <span className="font-semibold">{experienceDetails2.position}</span>
+            <span className="font-semibold">{EXPERIENCE.current.position}</span>
             <ul className="flex flex-col list-disc list-inside text-gray-700 dark:text-gray-200 text-sm space-y-1 mt-4">
-              {experienceDetails2.highlights.map((highlight, index) => (
-                <li key={index}>{highlight}</li>
+              {EXPERIENCE.current.highlights.map((highlight, idx) => (
+                <li key={idx}>{highlight}</li>
               ))}
             </ul>
           </div>
 
-          {/* Mobile-Friendly Experience Section */}
+          {/* Mobile: expandable internship experience */}
           <div className="mt-8 block md:hidden">
             <div 
               className="flex justify-between items-center bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 cursor-pointer"
@@ -204,7 +168,7 @@ const Hero = () => {
                   Experience
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-300">
-                  {experienceDetails.position}
+                  {EXPERIENCE.internship.position}
                 </p>
               </div>
               {isExperienceExpanded ? (
@@ -224,15 +188,15 @@ const Hero = () => {
                 >
                   <div className="p-4">
                     <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">
-                      {experienceDetails.company} | {experienceDetails.period}
+                      {EXPERIENCE.internship.company} | {EXPERIENCE.internship.period}
                     </p>
                     <ul className="list-disc list-outside text-gray-700 dark:text-gray-200 text-sm space-y-2 pl-5">
-                      {experienceDetails.highlights.map((highlight, index) => (
+                      {EXPERIENCE.internship.highlights.map((highlight, index) => (
                         <li key={index}>{highlight}</li>
                       ))}
                     </ul>
                     <a 
-                      href="https://caist.batstateu.edu.ph/behind-the-code/select/joshua-b.-fronda" 
+                      href={EXPERIENCE.internship.detailsUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="mt-3 inline-block text-sm text-blue-600 dark:text-blue-400 hover:underline"
@@ -260,20 +224,20 @@ const Hero = () => {
           <div className="mt-8">
             <h3 className="text-lg font-semibold text-blue-600 dark:text-blue-400 mb-4">Featured Projects</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {keyProjects.map((project, index) => (
+              {FEATURED_PROJECTS.map((project, index) => (
                 <motion.div 
-                  key={index}
+                  key={project.id}
                   className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 shadow-sm hover:shadow-md transition-all"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.2 + (index * 0.2), duration: 0.5 }}
+                  transition={{ delay: 1.2 + index * 0.15, duration: 0.5 }}
                 >
                   <h4 className="font-semibold text-gray-800 dark:text-white mb-2">{project.name}</h4>
                   <p className="text-xs text-gray-600 dark:text-gray-300 mb-2">{project.description}</p>
                   <div className="flex flex-wrap gap-1 mb-3">
-                    {project.technologies.map((tech, techIndex) => (
+                    {project.technologies.map((tech, techIdx) => (
                       <span 
-                        key={techIndex} 
+                        key={`${project.id}-tech-${techIdx}`} 
                         className="bg-blue-100 dark:bg-blue-800/40 text-blue-700 dark:text-blue-300 px-2 py-1 rounded text-xs"
                       >
                         {tech}
@@ -281,20 +245,41 @@ const Hero = () => {
                     ))}
                   </div>
                   <div className="flex gap-3">
-                    {project.githubLink !== "#" && (
+                    {project.links.live && (
                       <a 
-                        href="https://fir-config-6ca5c.web.app/developer" 
+                        href={project.links.live} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
+                        aria-label={`Open ${project.name} live`}
+                        className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors"
                       >
-                        <FaLink className="w-5 h-5" />
+                        <FaLink className="w-5 h-5" title="Live demo" />
+                      </a>
+                    )}
+                    {project.links.github && (
+                      <a 
+                        href={project.links.github} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        aria-label={`${project.name} source code`}
+                        className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors"
+                      >
+                        <FaGithub className="w-5 h-5" title="GitHub" />
                       </a>
                     )}
                   </div>
                 </motion.div>
               ))}
             </div>
+            <motion.a
+              href="#certifications"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.8, duration: 0.5 }}
+            >
+              View certifications →
+            </motion.a>
           </div>
         </motion.div>
 
@@ -308,12 +293,12 @@ const Hero = () => {
           <div className="mt-8 mb-8">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
               <span className="text-xs font-semibold text-gray-400 dark:text-gray-500 tracking-widest mb-2 sm:mb-0">
-                {experienceDetails2.period} - {experienceDetails2.company}
+                {EXPERIENCE.current.period} - {EXPERIENCE.current.company}
               </span>
             </div>
-            <span className="font-semibold">{experienceDetails2.position}</span>
+            <span className="font-semibold">{EXPERIENCE.current.position}</span>
             <ul className="flex flex-col list-disc list-inside text-gray-700 dark:text-gray-200 text-sm space-y-1 mt-4">
-              {experienceDetails2.highlights.map((highlight, index) => (
+              {EXPERIENCE.current.highlights.map((highlight, index) => (
                 <li key={index}>{highlight}</li>
               ))}
             </ul>
@@ -322,23 +307,17 @@ const Hero = () => {
           <div className="mt-8 mb-8">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
               <span className="text-xs font-semibold text-gray-400 dark:text-gray-500 tracking-widest mb-2 sm:mb-0">
-                {experienceDetails.period} - {experienceDetails.company}
+                {EXPERIENCE.internship.period} - {EXPERIENCE.internship.company}
               </span>
             </div>
-            <span className="font-semibold">{experienceDetails.position}</span>
+            <span className="font-semibold">{EXPERIENCE.internship.position}</span>
             <ul className="flex flex-col list-disc list-inside text-gray-700 dark:text-gray-200 text-sm space-y-1 mt-4">
-            <li>Developed web and mobile applications</li>
-            <li>Built and maintained backend services</li>
-            <li>Managed WordPress</li>
-            <li>Deployed applications on Ubuntu servers and configured Nginx</li>
-            <li>Collaborated in Agile teams, contributing to sprint planning, daily stand-ups, and retrospectives</li>
-            <li>Tracked tasks and project progress using Trello</li>
-            <li>Documented codebases, system architecture, and project requirements</li>
-            <li>Used Git for version control and collaboration</li>
-            <li>Applied communication, teamwork, and problem-solving</li>
+              {EXPERIENCE.internship.highlights.map((highlight, idx) => (
+                <li key={idx}>{highlight}</li>
+              ))}
             </ul>
             <p className="text-sm text-gray-300 mt-2">
-              During my internship, these are the <a href="https://caist.batstateu.edu.ph/behind-the-code/select/joshua-b.-fronda" target="_blank" rel="noopener noreferrer" className="font-semibold text-white underline hover:text-blue-400 transition-colors">Website.</a>
+              During my internship, these are the <a href={EXPERIENCE.internship.detailsUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-white underline hover:text-blue-400 transition-colors">Website.</a>
             </p>
           </div>
 

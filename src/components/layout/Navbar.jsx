@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import ThemeContext from '../../context/ThemeContext';
 
@@ -30,6 +30,8 @@ const Navbar = () => {
   }`;
 
   const navItems = [
+    { name: 'Home', href: '#home' },
+    { name: 'Certifications', href: '#certifications' },
   ];
 
   return (
@@ -62,6 +64,14 @@ const Navbar = () => {
               </motion.a>
             ))}
           </div>
+          <motion.button
+            onClick={toggleDarkMode}
+            className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 focus:outline-none"
+            whileTap={{ scale: 0.9 }}
+            aria-label="Toggle dark mode"
+          >
+            {darkMode ? <FaSun className="h-5 w-5" /> : <FaMoon className="h-5 w-5" />}
+          </motion.button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -76,7 +86,9 @@ const Navbar = () => {
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-gray-700 dark:text-gray-300 focus:outline-none"
+            className="text-gray-700 dark:text-gray-300 focus:outline-none p-1"
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMenuOpen}
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               {isMenuOpen ? (
@@ -88,6 +100,31 @@ const Navbar = () => {
           </button>
         </div>
       </div>
+
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden overflow-hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
+          >
+            <div className="container-custom py-4 flex flex-col gap-2">
+              {navItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
