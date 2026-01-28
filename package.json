@@ -6,7 +6,7 @@
   "homepage": "https://joshuafronda.github.io/portfolio",
   "scripts": {
     "dev": "vite",
-    "build": "npx vite build",
+    "build": "node node_modules/vite/bin/vite.js build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "npx vite preview",
     "generate:card": "node --experimental-modules scripts/generate-placeholder-card.js",
