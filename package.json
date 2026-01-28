@@ -6,9 +6,9 @@
   "homepage": "https://joshuafronda.github.io/portfolio",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npx vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
+    "preview": "npx vite preview",
     "generate:card": "node --experimental-modules scripts/generate-placeholder-card.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
